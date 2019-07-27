@@ -1,4 +1,4 @@
-# `@evilfactorylabs/global-state`
+# `@evilfactory/global-state`
 
 ⚛️ Simple State Management from react to react powered by React Hook.
 
@@ -7,13 +7,13 @@
 - [Yarn](https://yarnpkg.com/en/)
 
 ```bash
-$ yarn add -E @evilfactorylabs/global-state
+$ yarn add -E @evilfactory/global-state
 ```
 
 - [NPM](https://www.npmjs.com/)
 
 ```bash
-$ npm i @evilfactorylabs/global-state 
+$ npm i @evilfactory/global-state 
 ```
 
 <!-- @TODO # Usage -->
@@ -65,7 +65,7 @@ Example Use of `<StateProvider/>`.
 ```javascript
 import React, {useReducer} from 'react'
 import App from './you-app.js'
-import {StateProvider} from 'evilfactorylabs/global-state'
+import {StateProvider} from 'evilfactory/global-state'
 
 const initialState = { todo: [] } 
 const reducer = useReducer(state, action)
@@ -86,7 +86,7 @@ ReactDOM.render(
 ### Examples
 
 ```javascript
-import {useGlobalState} from '@evilfactorylabs/global-state'
+import {useGlobalState} from '@evilfactory/global-state'
 
 ...
 const createTodo = (state, action, todo) => {
