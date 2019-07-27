@@ -32,9 +32,9 @@
   "module": "dist/index.m.js",
   "unpkg": "dist/index.umd.js",
   "scripts": {
-    "build": "npm-run-all --silent -p build:*",
+    "build": "npm-run-all --silent -p build:* -s size",
     "build:microbundle": "microbundle",
-    "build:size": "strip-json-comments --no-whitespace dist/*.js | gzip-size ",
+    "size": "strip-json-comments --no-whitespace dist/*.js | gzip-size ",
     "build:docs": "documentation readme lib/*.js -q --section API && yarn fixreadme",
     "dev": "microbundle --watch",
     "lint": "eslint ./lib --fix",
