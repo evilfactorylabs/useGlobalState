@@ -9,5 +9,8 @@
   "private": true,
   "peerDependencies": {
     "react": "^16.8.6"
+  },
+  "scripts": {
+    "test": "jest"
   }
 }
