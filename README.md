@@ -1,6 +1,20 @@
-# use-globals-state
+# `@evilfactorylabs/global-state`
 
-Simple State Management from react to react powered by React Hook.
+⚛️ Simple State Management from react to react powered by React Hook.
+
+# Install
+
+- [Yarn](https://yarnpkg.com/en/)
+
+```bash
+$ yarn add -E @evilfactorylabs/global-state
+```
+
+- [NPM](https://www.npmjs.com/)
+
+```bash
+$ npm i @evilfactorylabs/global-state 
+```
 
 # API
 
@@ -8,72 +22,40 @@ Simple State Management from react to react powered by React Hook.
 
 ### Table of Contents
 
-- [useReducer](#usereducer)
-- [StateContext](#statecontext)
-- [useGlobalState](#useglobalstate)
-    -   [Parameters](#parameters)
-    -   [Examples](#examples)
 - [StateProvider](#stateprovider)
-    -   [Parameters](#parameters-1)
+    -   [Parameters](#parameters)
     -   [Properties](#properties)
+    -   [Examples](#examples)
+- [useGlobalState](#useglobalstate)
+    -   [Parameters](#parameters-1)
     -   [Examples](#examples-1)
-
-## useReducer
-
-Main Function of useGlobalState
-
-<https://github.com/evilfactorylabs/useGlobalState>
-
-**Meta**
-
-- **version**: 1.0.0
-
-## StateContext
-
-Type: createContext
-
-## useGlobalState
-
-### Parameters
-
-- `newAction` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
-
-### Examples
-
-```javascript
-(state, action, todo) => {
- return action({
-   type: 'ADD_TODO',
-   data: {
-     ...state,
-     todo: [
-       ...state.todo,
-       todo,
-     ],
-   } 
- })
-}
-```
 
 ## StateProvider
 
-Provider of this state management
+**<StateProvider/>** as Wrapper of your `React` Application.
 
 ### Parameters
 
 - `props` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
+    -   `props.reducer`  
+    -   `props.initialState`  
+    -   `props.children`  
 
 ### Properties
 
-- `reducer` **[useReducer](#usereducer)** 
+- `reducer` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** **[| useReducer](https://reactjs.org/docs/hooks-reference.html#usereducer)**
 - `initialState` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
-- `children` **([Node](https://developer.mozilla.org/docs/Web/API/Node/nextSibling) | React.Element)** 
+- `children` **[Element](https://developer.mozilla.org/docs/Web/API/Element)** **[| createElement](https://reactjs.org/docs/react-api.html#createelement)**
 
 ### Examples
 
+Example Use of `<StateProvider/>`.
+
+
 ```javascript
 import React, {useReducer} from 'react'
-import App from './App'
+import App from './you-app.js'
+import {StateProvider} from 'evilfactorylabs/global-state'
 
 const initialState = { todo: [] } 
 const reducer = useReducer(state, action)
@@ -85,4 +67,27 @@ ReactDOM.render(
 , document.getElementById('root'))
 ```
 
-Returns **ReactElement** See [ReactElement]\(<https://reactjs.org/docs/react-api.html#createelement>)
+## useGlobalState
+
+### Parameters
+
+- `newAction` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)?** [optional]
+
+### Examples
+
+```javascript
+import {useGlobalState} from '@evilfactorylabs/global-state'
+
+...
+const createTodo = (state, action, todo) => {
+ return action({
+   type: 'ADD_TODO',
+   data: todo,
+ })
+} 
+
+const [,addTodo] = useGlobalState(createTodo)
+
+addTodo({title: 'New Task'})
+...
+```
