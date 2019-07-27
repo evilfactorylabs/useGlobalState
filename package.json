@@ -1,8 +1,7 @@
 {
-  "name": "@evilfactorylabs/useGlobalState",
+  "name": "@evilfactorylabs/global-state",
   "version": "1.0.0",
   "description": "⚛️ Simple State Management from react to react powered by React Hook.",
-  "main": "lib/index.js",
   "repository": "git@github.com:evilfactorylabs/useGlobalState.git",
   "author": "ri7nz <ri7nz.labs@gmail.com>",
   "license": "MIT",
@@ -10,13 +9,46 @@
   "peerDependencies": {
     "react": "^16.8.6"
   },
+  "files": [
+    "lib",
+    "dist",
+    "README.md"
+  ],
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": true
+          }
+        }
+      ]
+    ],
+    "plugins": []
+  },
+  "source": "lib/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.m.js",
+  "unpkg": "dist/index.umd.js",
   "scripts": {
-    "test": "jest",
-    "lint": "eslint ./lib --fix"
+    "build": "microbundle",
+    "dev": "microbundle --watch",
+    "lint": "eslint ./lib --fix",
+    "prepare": "rm -rf dist && yarn test && yarn build",
+    "test": "jest --config jest.config.js",
+    "test:watch": "jest --watch",
+    "fixreadme": "node -e 'var fs=require(\"fs\");fs.writeFileSync(\"README.md\", fs.readFileSync(\"README.md\", \"utf8\").replace(/^-   /gm, \"- \"))'",
+    "docs": "documentation readme lib/*.js -q --section API && yarn fixreadme"
   },
   "devDependencies": {
+    "@babel/preset-env": "7.5.5",
+    "babel-jest": "24.8.0",
+    "documentation": "12.0.3",
     "eslint": "6.1.0",
     "eslint-plugin-jest": "22.14.0",
-    "eslint-plugin-react": "7.14.3"
+    "eslint-plugin-react": "7.14.3",
+    "jest": "24.8.0",
+    "microbundle": "0.11.0"
   }
 }
