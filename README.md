@@ -16,10 +16,14 @@ $ yarn add -E @evilfactory/global-state
 $ npm i @evilfactory/global-state 
 ```
 
-<!-- @TODO # Usage -->
+## Usage
+
+- [Example CodeSandbox](https://codesandbox.io/s/evilfactoryglobal-state-example-rc4b4)
 
 <!-- Please Do not add something after # API -->
+
 # Features
+
 - [x] Zero configuration ✅.
 - [x] React hooks based API ✅.
 - [x] React Native supported ✅.
@@ -65,7 +69,7 @@ Example Use of `<StateProvider/>`.
 ```javascript
 import React, {useReducer} from 'react'
 import App from './you-app.js'
-import {StateProvider} from 'evilfactory/global-state'
+import {StateProvider} from 'evilfactorylabs/global-state'
 
 const initialState = { todo: [] } 
 const reducer = useReducer(state, action)
@@ -86,7 +90,7 @@ ReactDOM.render(
 ### Examples
 
 ```javascript
-import {useGlobalState} from '@evilfactory/global-state'
+import {useGlobalState} from '@evilfactorylabs/global-state'
 
 ...
 const createTodo = (state, action, todo) => {
