@@ -6,5 +6,8 @@
   "repository": "git@github.com:evilfactorylabs/useGlobalState.git",
   "author": "ri7nz <ri7nz.labs@gmail.com>",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "peerDependencies": {
+    "react": "^16.8.6"
+  }
 }
