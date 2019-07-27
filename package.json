@@ -2,7 +2,7 @@
   "name": "@evilfactorylabs/useGlobalState",
   "version": "1.0.0",
   "description": "⚛️ Simple State Management from react to react powered by React Hook.",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "repository": "git@github.com:evilfactorylabs/useGlobalState.git",
   "author": "ri7nz <ri7nz.labs@gmail.com>",
   "license": "MIT",
