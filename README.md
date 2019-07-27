@@ -16,6 +16,8 @@ $ yarn add -E @evilfactorylabs/global-state
 $ npm i @evilfactorylabs/global-state 
 ```
 
+<!-- @TODO # Usage -->
+
 <!-- Please Do not add something after # API -->
 
 # API
