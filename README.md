@@ -19,6 +19,12 @@ $ npm i @evilfactorylabs/global-state
 <!-- @TODO # Usage -->
 
 <!-- Please Do not add something after # API -->
+# Features
+- [x] Zero configuration ✅.
+- [x] React hooks based API ✅.
+- [x] React Native supported ✅.
+- [x] Global State & shareable ✅.
+- [ ] Redux Dev Tools supported 🙏.
 
 # API
 
