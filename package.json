@@ -1,5 +1,5 @@
 {
-  "name": "@evilfactorylabs/global-state",
+  "name": "@evilfactory/global-state",
   "version": "0.0.1",
   "description": "⚛️ Simple State Management from react to react powered by React Hook.",
   "repository": "git@github.com:evilfactorylabs/useGlobalState.git",
