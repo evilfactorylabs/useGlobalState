@@ -7,13 +7,28 @@
   "license": "MIT",
   "private": false,
   "peerDependencies": {
-    "react": "^16.8.6"
+    "react": "^16.8.0"
   },
   "files": [
     "lib",
-    "dist",
-    "README.md"
+    "dist"
   ],
+  "jest": {
+    "bail": true,
+    "browser": true,
+    "displayName": "global-state v0.0.1",
+    "testEnvironment": "jest-environment-jsdom",
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    },
+    "setupFilesAfterEnv": [
+      "./jest.setup.js"
+    ],
+    "testMatch": [
+      "**/__tests__/**/*.js?(x)"
+    ],
+    "verbose": true
+  },
   "babel": {
     "presets": [
       [
@@ -23,7 +38,8 @@
             "node": true
           }
         }
-      ]
+      ],
+      "@babel/preset-react"
     ],
     "plugins": []
   },
@@ -40,7 +56,7 @@
     "lint": "eslint ./lib --fix",
     "prepare": "rm -rf dist && yarn test && yarn build",
     "release": "yarn -s prepare && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish",
-    "test": "jest --config jest.config.js",
+    "test": "jest",
     "test:watch": "jest --watch",
     "fixreadme": "node -e 'var fs=require(\"fs\");fs.writeFileSync(\"README.md\", fs.readFileSync(\"README.md\", \"utf8\").replace(/^-   /gm, \"- \"))'",
     "docs": "documentation readme lib/*.js -q --section API && yarn fixreadme"
@@ -48,6 +64,9 @@
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "7.5.5",
+    "@babel/preset-react": "7.0.0",
+    "@testing-library/jest-dom": "4.0.0",
+    "@testing-library/react": "8.0.7",
     "babel-jest": "24.8.0",
     "documentation": "12.0.3",
     "eslint": "6.1.0",
@@ -57,6 +76,8 @@
     "jest": "24.8.0",
     "microbundle": "0.11.0",
     "npm-run-all": "4.1.5",
+    "react": "16.8.0",
+    "react-dom": "16.8.6",
     "strip-json-comments-cli": "1.0.1"
   }
 }
