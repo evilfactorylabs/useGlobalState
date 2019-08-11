@@ -87,8 +87,15 @@ function todoReducer(state, action) {
  }
 }
 
+function createTodo(state,action, todo){
+ return action({type: 'NEW_TODO', todo})
+}
+
+// const [state, actions] = useGlobalState() 
+// actions.createTodo({title: 'New Todo Created', status: 'pending'})
+
 ReactDOM.render(
-   <StateProvider reducer={todoReducer} initialState={initialState}>
+   <StateProvider reducer={todoReducer} initialState={initialState} actions={[createTodo]}>
      <App/>
    </StateProvider>
 , document.getElementById('root'))
