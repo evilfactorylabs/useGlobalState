@@ -88,7 +88,7 @@ function todoReducer(state, action) {
 }
 
 function createTodo(state,action, todo){
- return action({type: 'NEW_TODO', todo})
+ return action({type: 'ADD_TODO', todo})
 }
 
 // const [state, actions] = useGlobalState() 
