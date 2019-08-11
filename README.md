@@ -54,12 +54,14 @@ $ npm i @evilfactory/global-state
     -   `props.reducer`  
     -   `props.initialState`  
     -   `props.children`  
+    -   `props.actions`  
 
 ### Properties
 
 - `reducer` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** **[| useReducer](https://reactjs.org/docs/hooks-reference.html#usereducer)**
 - `initialState` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
 - `children` **[Element](https://developer.mozilla.org/docs/Web/API/Element)** **[| createElement](https://reactjs.org/docs/react-api.html#createelement)**
+- `actions` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function))** 
 
 ### Examples
 
@@ -111,8 +113,8 @@ const createTodo = (state, action, todo) => {
  })
 } 
 
-const [,addTodo] = useGlobalState(createTodo)
+const [,actions.createTodo] = useGlobalState(createTodo)
 
-addTodo({title: 'New Task'})
+actions.createTodo({title: 'New Task'})
 ...
 ```
