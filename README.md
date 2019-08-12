@@ -120,7 +120,7 @@ const createTodo = (state, action, todo) => {
  })
 } 
 
-const [,actions.createTodo] = useGlobalState(createTodo)
+const [,actions] = useGlobalState(createTodo)
 
 actions.createTodo({title: 'New Task'})
 ...
