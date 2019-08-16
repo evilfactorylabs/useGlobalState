@@ -67,7 +67,7 @@
     "@babel/preset-react": "7.0.0",
     "@testing-library/jest-dom": "4.0.0",
     "@testing-library/react": "8.0.7",
-    "babel-jest": "24.8.0",
+    "babel-jest": "24.9.0",
     "documentation": "12.0.3",
     "eslint": "6.1.0",
     "eslint-plugin-jest": "22.14.0",
