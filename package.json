@@ -70,7 +70,7 @@
     "babel-jest": "24.8.0",
     "documentation": "12.0.3",
     "eslint": "6.1.0",
-    "eslint-plugin-jest": "22.14.0",
+    "eslint-plugin-jest": "22.16.0",
     "eslint-plugin-react": "7.14.3",
     "gzip-size-cli": "3.0.0",
     "jest": "24.8.0",
