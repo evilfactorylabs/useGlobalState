@@ -69,7 +69,7 @@
     "@testing-library/react": "8.0.7",
     "babel-jest": "24.8.0",
     "documentation": "12.0.3",
-    "eslint": "6.1.0",
+    "eslint": "6.3.0",
     "eslint-plugin-jest": "22.14.0",
     "eslint-plugin-react": "7.14.3",
     "gzip-size-cli": "3.0.0",
