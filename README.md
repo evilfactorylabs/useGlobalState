@@ -54,12 +54,14 @@ $ npm i @evilfactory/global-state
     -   `props.reducer`  
     -   `props.initialState`  
     -   `props.children`  
+    -   `props.actions`  
 
 ### Properties
 
 - `reducer` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** **[| useReducer](https://reactjs.org/docs/hooks-reference.html#usereducer)**
 - `initialState` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
 - `children` **[Element](https://developer.mozilla.org/docs/Web/API/Element)** **[| createElement](https://reactjs.org/docs/react-api.html#createelement)**
+- `actions` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function))** 
 
 ### Examples
 
@@ -85,8 +87,15 @@ function todoReducer(state, action) {
  }
 }
 
+function createTodo(state,action, todo){
+ return action({type: 'ADD_TODO', todo})
+}
+
+// const [state, actions] = useGlobalState() 
+// actions.createTodo({title: 'New Todo Created', status: 'pending'})
+
 ReactDOM.render(
-   <StateProvider reducer={todoReducer} initialState={initialState}>
+   <StateProvider reducer={todoReducer} initialState={initialState} actions={[createTodo]}>
      <App/>
    </StateProvider>
 , document.getElementById('root'))
@@ -111,8 +120,8 @@ const createTodo = (state, action, todo) => {
  })
 } 
 
-const [,addTodo] = useGlobalState(createTodo)
+const [,actions] = useGlobalState(createTodo)
 
-addTodo({title: 'New Task'})
+actions.createTodo({title: 'New Task'})
 ...
 ```

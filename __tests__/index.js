@@ -16,7 +16,10 @@ test('StateProvider & useGlobalState test', () => {
                 default: return state
             } 
         },
-        initialState: {test: false}
+        initialState: {test: false},
+        actions: [
+            function changeTest(state, action){return action({ type: 'TEST' })}
+        ]
     } 
 
     const ShowTest = () => {
@@ -29,10 +32,10 @@ test('StateProvider & useGlobalState test', () => {
     } 
 
     const ChangeTest = () => {
-        const [, dispatch] = useGlobalState()
+        const [, actions] = useGlobalState()
 
         const handleClick = () => {
-            dispatch({
+            actions.changeTest({
                 type: 'TEST'
             }) 
         }
